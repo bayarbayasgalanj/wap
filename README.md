@@ -4,4 +4,4 @@ CS472 Web Application Programming Course Jun-2024
 
 #### 
 
-My Home Page : https://bayarbayasgalanj.github.io/wap/Lab1/
+My Home Page : https://bayarbayasgalanj.github.io/wap
