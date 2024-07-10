@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Design with Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    header, footer {
+      background-color: #ADD8E6;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      background-color: #2F4F4F;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    nav ul li {
+      text-align: center;
+      padding: 10px;
+      border-right: 1px solid #333;
+    }
+    nav ul li:last-child {
+      border-right: none;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .column1 {
+      grid-column: span 1;
+      grid-row: span 1;
+      padding: 20px;
+      background-color: #B0C4DE;
+      box-sizing: border-box;
+    }
+    .column2 {
+      grid-column: span 2;
+      grid-row: span 1;
+      padding: 20px;
+      background-color: #A9A9A9;
+      box-sizing: border-box;
+    }
+    .column3 {
+      grid-column: span 1;
+      grid-row: span 1;
+      padding: 20px;
+      background-color: #D3D3D3;
+      box-sizing: border-box;
+    }
+    footer {
+      background-color: #2F4F4F;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      nav ul {
+        grid-template-columns: 1fr;
+      }
+      .content {
+        grid-template-columns: 1fr;
+      }
+      .column1, .column2, .column3 {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Header</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="floats.html">Menu1</a></li>
+      <li><a href="flexbox.html">Menu2</a></li>
+      <li><a href="bootstrap.html">Menu3</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <div class="column1">Column1</div>
+    <div class="column3">Column3</div>
+    <div class="column2">Column2</div>
+  </div>
+  <footer>
+    <p>Footer</p>
+  </footer>
+</body>
+</html>
