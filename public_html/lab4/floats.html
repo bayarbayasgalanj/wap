@@ -1,102 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Design with Floats</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-    }
-    header, footer {
-      background-color: #ADD8E6;
-      color: black;
-      text-align: center;
-      padding: 20px;
-    }
-    nav {
-      float: left;
-      width: 100%;
-      background-color: #2F4F4F;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      width: 33.33%;
-      text-align: center;
-      padding: 10px;
-      border-right: 1px solid #333;
-    }
-    nav ul li:last-child {
-      border-right: none;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-    
-    .column1, .column2, .column3 {
-      float: left;
-      width: 33.33%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-    .column1 {
-      background-color: #B0C4DE;
-    }
-    .column2 {
-      background-color: #A9A9A9;
-    }
-    .column3 {
-      background-color: #D3D3D3;
-    }
-    footer {
-      background-color: #2F4F4F;
-      color: white;
-    }
-    @media (max-width: 600px) {
-      nav ul {
-        display: block;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        padding: 0;
       }
-      nav ul li {
-        display: block;
-        width: 100%;
+      header {
+        background-color: #add8e6;
+        text-align: center;
+        padding: 20px;
+      }
+      footer {
+        background-color: #2f4f4f;
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+      nav {
+        background-color: #2f4f4f;
+        display: flex;
+        justify-content: center;
+      }
+      .menu {
+        color: white;
+        text-align: center;
+        padding: 10px 20px;
+        border-right: 2px solid black;
+      }
+      .menu:last-child {
         border-right: none;
-        border-bottom: 1px solid #333;
       }
-      nav ul li:last-child {
-        border-bottom: none;
+      .content {
+        display: flex;
+        flex-wrap: wrap;
       }
-      .column1, .column2, .column3 {
-        width: 100%;
+      .column {
+        flex: 1;
+        height: 300px;
+        padding: 10px;
+        box-sizing: border-box;
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Header</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="flexbox.html">Menu1</a></li>
-      <li><a href="grid.html">Menu2</a></li>
-      <li><a href="bootstrap.html">Menu3</a></li>
-    </ul>
-  </nav>
-  <div class="content">
-    <div class="column1">Column1</div>
-    <div class="column2">Column2</div>
-    <div class="column3">Column3</div>
-  </div>
-  <footer>
-    <p>Footer</p>
-  </footer>
-</body>
+      .column1 {
+        background-color: #aaa;
+      }
+      .column2 {
+        background-color: #bbb;
+      }
+      .column3 {
+        background-color: #ccc;
+      }
+      @media (max-width: 600px) {
+        .column {
+          flex: 100%;
+        }
+        .column2 {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Header</h1></header>
+    <nav>
+      <div class="menu">Menu1</div>
+      <div class="menu">Menu2</div>
+      <div class="menu">Menu3</div>
+    </nav>
+    <div class="content">
+      <div class="column column1">Column1</div>
+      <div class="column column2">Column2</div>
+      <div class="column column3">Column3</div>
+    </div>
+    <footer>Footer</footer>
+  </body>
 </html>

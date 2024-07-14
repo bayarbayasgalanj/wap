@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Design with Bootstrap</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    header, footer {
-      background-color: #ADD8E6;
-      color: black;
-      text-align: center;
-      padding: 20px;
-    }
-    nav {
-      background-color: #2F4F4F;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-    nav ul li {
-      flex: 1;
-      text-align: center;
-      padding: 10px;
-      border-right: 1px solid #333;
-    }
-    nav ul li:last-child {
-      border-right: none;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-    .column1 {
-      background-color: #B0C4DE;
-    }
-    .column2 {
-      background-color: #A9A9A9;
-    }
-    .column3 {
-      background-color: #D3D3D3;
-    }
-    footer {
-      background-color: #2F4F4F;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-  <div class="container-fluid">
-    <header>
-      <h1>Header</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="floats.html">Menu1</a></li>
-        <li><a href="flexbox.html">Menu2</a></li>
-        <li><a href="grid.html">Menu3</a></li>
-      </ul>
-    </nav>
-    <div class="row">
-      <div class="col-md-4 col-sm-12 p-3 column1">Column1</div>
-      <div class="col-md-4 col-sm-12 p-3 column2">Column2</div>
-      <div class="col-md-4 col-sm-12 p-3 column3">Column3</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Responsive Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        padding: 0;
+      }
+      header {
+        background-color: #add8e6;
+        text-align: center;
+        padding: 20px;
+      }
+      footer {
+        background-color: #2f4f4f;
+        text-align: center;
+        padding: 20px;
+        color: white;
+      }
+      .nav {
+        background-color: #2f4f4f;
+        overflow: hidden;
+      }
+      .menu {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-right: 2px solid black;
+      }
+      .menu:last-child {
+        border-right: none;
+      }
+      .column1 {
+        background-color: #aaa;
+      }
+      .column2 {
+        background-color: #bbb;
+      }
+      .column3 {
+        background-color: #ccc;
+      }
+      .column {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="text-center">
+        <h1>Header</h1>
+      </header>
+      <nav class="nav">
+        <div class="menu">Menu1</div>
+        <div class="menu">Menu2</div>
+        <div class="menu">Menu3</div>
+      </nav>
+      <div class="content row">
+        <div class="column col-sm-4 col-12 order-1 order-sm-1 column1">Column 1</div>
+        <div class="column col-sm-4 col-12 order-3 order-sm-2 column2">Column 2</div>
+        <div class="column col-sm-4 col-12 order-2 order-sm-3 column3">Column 3</div>
+      </div>  
+      <footer class="text-center">Footer</footer>
     </div>
-    <footer>
-      <p>Footer</p>
-    </footer>
-  </div>
-</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
 </html>
