@@ -1,0 +1,14 @@
+services:
+  tomcat:
+    image: tomcat:9.0-jdk11
+    container_name: QuizApp
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/quiz-app.war:/usr/local/tomcat/webapps/quiz-app.war
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    restart: unless-stopped
+
+
+
