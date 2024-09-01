@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calc</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+        }
+        label {
+            font-size: 20px;
+            margin: 0 10px;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-container">
+    <h1>Simple Calculator</h1>
+    <hr>
+
+    <form id="calcForm">
+        <div>
+            <span><input type="number" id="sum1" name="sum1"/></span>
+            <label>+</label>
+            <span><input type="number" id="sum2" name="sum2"/></span>
+            <label>=</label>
+            <span><input type="text" id="sumResult" readonly/></span>
+        </div>
+        <br>
+        <div>
+            <span><input type="number" id="mul1" name="mul1"/></span>
+            <label>*</label>
+            <span><input type="number" id="mul2" name="mul2"/></span>
+            <label>=</label>
+            <span><input type="text" id="mulResult" readonly/></span>
+        </div>
+        <br>
+        <input type="submit" value="Calculate"/>
+    </form>
+
+    <p id="error-message"></p>
+</div>
+
+<script>
+    document.getElementById('calcForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        let sum1 = document.getElementById('sum1').value;
+        let sum2 = document.getElementById('sum2').value;
+        let mul1 = document.getElementById('mul1').value;
+        let mul2 = document.getElementById('mul2').value;
+
+        fetch('calculate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                sum1: sum1,
+                sum2: sum2,
+                mul1: mul1,
+                mul2: mul2
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('error-message').innerText = data.error;
+                document.getElementById('sumResult').value = '';
+                document.getElementById('mulResult').value = '';
+            } else {
+                document.getElementById('error-message').style.display = 'none';
+                document.getElementById('sumResult').value = data.sum !== undefined ? data.sum : '';
+                document.getElementById('mulResult').value = data.product !== undefined ? data.product : '';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+services:
+  tomcat:
+    image: tomcat:9.0-jdk11
+    container_name: servlet_tomcat
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/calculator-app.war:/usr/local/tomcat/webapps/calculator-app.war
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    restart: unless-stopped
+
+
+
