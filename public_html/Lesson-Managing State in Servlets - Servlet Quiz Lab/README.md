@@ -1,29 +1,21 @@
-# The Number Quiz Web Application
+<!-- Number Quiz Web Application -->
+<!-- Overview -->
+This project is a Number Quiz web application developed as part of a lab assignment. The application challenges users to predict the next number in a given sequence. The server-side logic is powered by Java servlets, while JSP handles the dynamic generation of content and user interactions.
 
-## Overview
-
-This project implements a Number Quiz web application as part of a lab assignment. The application presents users with a
-series of number sequences and asks them to guess the next number in the sequence. The server-side logic is implemented
-using Java servlets, and JSP is used to generate dynamic content and handle user interactions.
-
-## Features
-
-- Display of number sequences for the quiz
-- User input for guessing the next number in the sequence
-- Calculation and display of the user's score
-- Server-side processing using Java servlets
-- Dynamic content generation using JSP
-- Basic error handling for invalid inputs
-
-## Technologies Used
-
-- Java Servlets
-- JavaServer Pages (JSP)
-- HTML
-- Maven (for build management)
-- Docker & Apache Tomcat (for deployment)
-
-## Project Structure
+<!-- Features -->
+Interactive quiz with number sequences
+User input for guessing the next number
+Real-time score calculation and display
+Robust server-side processing with Java servlets
+Dynamic page rendering using JSP
+Error handling for invalid inputs
+<!-- Technologies Used -->
+Java Servlets
+JavaServer Pages (JSP)
+HTML
+Maven (build management)
+Docker & Apache Tomcat (deployment)
+<!-- Project Structure -->
 
 ```
 number-quiz/
@@ -85,8 +77,5 @@ number-quiz/
 3. **Access the application** at `http://localhost:8080/quiz-app/quiz`
 
 ## Notes
+This project was developed to showcase the importance of separating business logic from presentation layers. By isolating the core quiz logic, the functionality can easily be adapted for different interfaces, such as a console application or a web application.
 
-This lab demonstrated how to build a simple quiz application using servlets and JSP for dynamic web content. The project
-reinforced the concept of separating quiz logic from presentation and showcased how JSP can be used to create
-interactive web applications efficiently. The development and deployment process was straightforward and provided
-hands-on experience with both Java web technologies and Docker.
