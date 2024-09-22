@@ -1,0 +1,14 @@
+services:
+  tomcat:
+    image: tomcat:9.0-jdk11
+    container_name: AjaxPets
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/ajax-pets.war:/usr/local/tomcat/webapps/ajax-pets.war
+    environment:
+      - JAVA_OPTS=-Xmx512m
+    restart: unless-stopped
+
+
+
